@@ -1,0 +1,148 @@
+Pages to Create
+Home
+Hero section
+Company introduction
+Why choose us
+Products
+Certifications
+Contact CTA
+About Us
+Company history
+Manufacturing process
+Vision & mission
+Products
+
+Examples:
+
+Earthing Electrodes
+Copper Bonded Rods
+GI Earthing Electrodes
+Earthing Pit Covers
+Lightning Protection Products
+Product Details Page
+
+Products Section
+
+Each product should have:
+
+Product image
+Product name
+Short description
+Specifications
+Inquiry button
+
+Example:
+
+Copper Bonded Earthing Electrode
+
+Length: 1m, 2m, 3m
+Diameter: 17mm
+Material: Copper bonded steel
+[Send Inquiry]
+
+
+but dont add any image according to you, i have images, i will provide you.
+i have a catlogue already ready for this company, BASEPLUSEARTHINGS.
+
+
+
+
+
+Frontend
+Option 1 (Recommended)
+
+Next.js + Tailwind CSS
+
+Advantages:
+
+Fast
+SEO friendly
+Professional
+Easy deployment
+
+Use:
+
+Next.js
+Tailwind CSS
+JavaScript
+
+
+
+Database
+
+Initially:
+
+No database required.
+
+Use:
+
+Contact form → Email
+
+Options:
+
+Formspree
+Resend
+EmailJS
+
+For a manufacturing company, this is enough initially.
+
+
+Domain
+
+Buy:
+
+companyname.com
+
+Alternatives:
+
+.in
+.co.in
+
+Good registrars:
+
+Namecheap
+Cloudflare Registrar
+
+
+Hosting
+Initial Phase (0–10k visitors/month)
+
+Use:
+
+Vercel
+
+Cost:
+
+Free or very cheap
+
+Benefits:
+
+CDN included
+SSL included
+Easy deployment from GitHub
+
+
+
+
+SEO (Very Important)
+
+Manufacturing websites get most leads from Google.
+
+Do:
+
+Proper page titles
+Product keywords
+Product schema
+Google Business Profile
+Sitemap
+Fast loading
+
+Example keywords:
+
+Earthing electrode manufacturer
+GI earthing electrode supplier
+Copper bonded earthing rod
+Earthing solutions India
+
+
+Create a professional industrial manufacturing website for an earthing solutions company. Use Next.js and Tailwind CSS. Create dedicated product cards/pages from the provided product data. Include a downloadable catalogue PDF section, inquiry forms, WhatsApp contact button, certifications section, factory gallery, and SEO-optimized product pages.

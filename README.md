@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Base Plus Earthings
+
+A modern, responsive corporate website for Base Plus Earthings, a leading manufacturer of earthing electrodes, copper bonded rods, and lightning protection solutions in India.
+
+## Tech Stack
+
+*   **Framework:** [Next.js](https://nextjs.org/) (App Router)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Icons:** Heroicons / Custom SVGs
+*   **Fonts:** Geist (via `next/font`)
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally on your machine:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1.  **Clone the repository** (if you haven't already):
+    ```bash
+    git clone <your-github-repo-url>
+    cd baseplusearthings.in
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4.  **View the site:**
+    Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+*   `src/app/`: Contains all the pages and routing logic (Next.js App Router).
+    *   `/page.js`: The Home page.
+    *   `/about/page.js`: About Us page.
+    *   `/catalogue/page.js`: Catalogue download page.
+    *   `/contact/page.js`: Contact Us page.
+    *   `/products/`: Product listing and individual product details.
+*   `src/components/`: Reusable React components (`Navbar`, `Footer`, `ProductCard`, etc.).
+*   `src/data/`: Static data files (e.g., `products.js`) used to populate content.
+*   `public/`: Static assets like images, logos, and favicons.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The easiest way to deploy this Next.js application is to use **Vercel** (the creators of Next.js).
 
-## Deploy on Vercel
+1.  Push your code to a GitHub repository.
+2.  Go to [Vercel](https://vercel.com/) and sign in with your GitHub account.
+3.  Click **Add New...** -> **Project**.
+4.  Import your GitHub repository.
+5.  Vercel will automatically detect that it's a Next.js project and set the correct build settings.
+6.  Click **Deploy**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Alternatively, you can deploy to any hosting provider that supports Node.js (like AWS, DigitalOcean, Heroku) by running `npm run build` and then `npm run start`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 💬Author
+
+
+Author: Priyanshu Chaudhary <br>
+📧 Email: [priyanshukaushal14@gmail.com](mailto:priyanshukaushal14@gmail.com) <br>
+🌐 LinkedIn: [https://www.linkedin.com/in/priyanshu-chaudhary-1b7593255/](https://www.linkedin.com/in/priyanshu-chaudhary-1b7593255/) <br>
+
+Happy Business! ✨
