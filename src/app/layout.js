@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://basplusearthings.in"),
+  metadataBase: new URL("https://baseplusearthings.in"),
   title: {
     default: "Base Plus Earthings | Earthing Electrode and Lightning Arrester Manufacturer in India",
     template: "%s | Base Plus Earthings",
@@ -35,7 +35,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://basplusearthings.in",
+    url: "https://baseplusearthings.in",
     siteName: "Base Plus Earthings",
     title: "Base Plus Earthings | Earthing Electrode Manufacturer in India",
     description:

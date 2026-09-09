@@ -1,9 +1,18 @@
 import InquiryForm from "@/components/InquiryForm";
 
 export const metadata = {
-  title: "Contact Us",
+  title: "Contact Us | Get Quotation for Earthing Products",
   description:
-    "Contact Base Plus Earthings for earthing electrode inquiries, product quotations, and technical support. Reach us via phone, email, or WhatsApp.",
+    "Contact Base Plus Earthings for earthing electrode inquiries, product quotations, and technical support. Located in Lucknow, India. Pan India delivery. Reach us via phone, email, or WhatsApp.",
+  keywords: [
+    "contact Base Plus Earthings",
+    "earthing electrode quotation",
+    "earthing products inquiry",
+    "earthing manufacturer contact",
+  ],
+  alternates: {
+    canonical: "https://baseplusearthings.in/contact",
+  },
 };
 
 const contactInfo = [

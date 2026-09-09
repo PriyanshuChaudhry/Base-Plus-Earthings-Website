@@ -82,27 +82,87 @@ export default function HomePage() {
 
   return (
     <>
-      {/* JSON-LD Structured Data */}
+      {/* JSON-LD Organization Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": ["Organization", "LocalBusiness"],
+            "@id": "https://baseplusearthings.in/#organization",
             name: "Base Plus Earthings",
-            url: "https://basplusearthings.in",
-            logo: "https://basplusearthings.in/logo.png",
+            url: "https://baseplusearthings.in",
+            logo: "https://baseplusearthings.in/logo.PNG",
+            image: "https://baseplusearthings.in/hero-image.jpeg",
             description:
-              "Leading manufacturer of premium earthing electrodes and earthing solutions in India.",
+              "Leading manufacturer of premium earthing electrodes, copper bonded rods, GI earthing electrodes, earthing pit covers, and lightning protection systems in India. ISO certified quality with pan India delivery.",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Lucknow",
               addressRegion: "Uttar Pradesh",
+              postalCode: "226001",
               addressCountry: "IN",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: "26.8467",
+              longitude: "80.9462",
             },
             telephone: "+91 9278276662",
             email: "baseplusearthings.in@gmail.com",
+            priceRange: "$$",
+            openingHoursSpecification: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              opens: "09:00",
+              closes: "18:00",
+            },
+            areaServed: {
+              "@type": "Country",
+              name: "India",
+            },
             sameAs: [],
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Earthing Products",
+              itemListElement: [
+                {
+                  "@type": "OfferCatalog",
+                  name: "Earthing Electrodes",
+                  itemListElement: [
+                    { "@type": "Offer", itemOffered: { "@type": "Product", name: "Copper Bonded Earthing Electrode" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Product", name: "GI Earthing Electrode" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Product", name: "Pure Copper Earthing Electrode" } },
+                  ],
+                },
+                {
+                  "@type": "OfferCatalog",
+                  name: "Lightning Protection",
+                  itemListElement: [
+                    { "@type": "Offer", itemOffered: { "@type": "Product", name: "ESE Lightning Arrester" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Product", name: "Pure Copper Lightning Arrester" } },
+                  ],
+                },
+              ],
+            },
+          }),
+        }}
+      />
+
+      {/* JSON-LD WebSite Schema for Sitelinks Search */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Base Plus Earthings",
+            url: "https://baseplusearthings.in",
+            description: "Leading manufacturer of earthing electrodes and lightning protection systems in India.",
+            publisher: {
+              "@type": "Organization",
+              "@id": "https://baseplusearthings.in/#organization",
+            },
           }),
         }}
       />
@@ -118,7 +178,7 @@ export default function HomePage() {
           <div className="absolute inset-0 md:hidden opacity-30 mix-blend-overlay">
             <Image
               src="/hero-image.jpeg"
-              alt="Base Plus Earthings Facility"
+              alt="Earthing electrode manufacturer Base Plus Earthings facility"
               fill
               className="object-cover"
               priority
@@ -191,7 +251,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-tr from-navy-900/40 to-transparent z-10" />
             <Image
               src="/hero-image.jpeg"
-              alt="Base Plus Earthings Products"
+              alt="Premium earthing electrodes and lightning protection products by Base Plus Earthings India"
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
               priority

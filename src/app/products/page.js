@@ -3,9 +3,9 @@ import ProductCard from "@/components/ProductCard";
 import { products, categories } from "@/data/products";
 
 export const metadata = {
-  title: "Products",
+  title: "Earthing Products | Electrodes, Lightning Arresters & Accessories",
   description:
-    "Explore our complete range of earthing products, copper bonded electrodes, GI earthing, earthing pit covers, lightning arresters, and earthing accessories. Made in India with quality certifications.",
+    "Explore our complete range of earthing products. Copper bonded electrodes, GI earthing, earthing pit covers, ESE lightning arresters, earthing compound, and copper strips. Made in India with ISO certified quality. Pan India delivery.",
   keywords: [
     "earthing electrodes",
     "copper bonded rod",
@@ -14,7 +14,14 @@ export const metadata = {
     "lightning arrester",
     "earthing compound",
     "copper earthing strip",
+    "earthing products India",
+    "earthing electrode manufacturer",
+    "buy earthing electrode online",
+    "earthing solutions manufacturer India",
   ],
+  alternates: {
+    canonical: "https://baseplusearthings.in/products",
+  },
 };
 
 export default function ProductsPage() {

@@ -3,9 +3,19 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "About Us",
+  title: "About Us | Earthing Electrode Manufacturer in Lucknow, India",
   description:
     "Learn about Base Plus Earthings, a leading manufacturer of earthing electrodes, copper bonded rods, and earthing solutions in India. Our history, vision, and manufacturing excellence.",
+  keywords: [
+    "Base Plus Earthings",
+    "earthing manufacturer India",
+    "earthing electrode manufacturer Lucknow",
+    "copper bonded rod manufacturer",
+    "earthing solutions company India",
+  ],
+  alternates: {
+    canonical: "https://baseplusearthings.in/about",
+  },
 };
 
 const timeline = [

@@ -11,6 +11,44 @@ export async function generateStaticParams() {
   }));
 }
 
+// Generate FAQ data for each product
+function getProductFAQs(product) {
+  const faqs = [];
+  
+  faqs.push({
+    question: `What is ${product.name}?`,
+    answer: product.shortDescription,
+  });
+
+  if (product.specifications?.Material) {
+    faqs.push({
+      question: `What material is the ${product.name} made of?`,
+      answer: `The ${product.name} is made of ${product.specifications.Material}. It is manufactured by Base Plus Earthings with strict quality control and testing.`,
+    });
+  }
+
+  if (product.specifications?.Standard) {
+    faqs.push({
+      question: `What standards does the ${product.name} comply with?`,
+      answer: `The ${product.name} complies with ${product.specifications.Standard} standards, ensuring reliable performance and safety in all earthing applications.`,
+    });
+  }
+
+  if (product.specifications?.Length) {
+    faqs.push({
+      question: `What sizes are available for ${product.name}?`,
+      answer: `The ${product.name} is available in lengths of ${product.specifications.Length}${product.specifications.Diameter ? ` and diameters of ${product.specifications.Diameter}` : ""}. Custom sizes can be made available on request.`,
+    });
+  }
+
+  faqs.push({
+    question: `Where can I buy ${product.name} in India?`,
+    answer: `You can buy ${product.name} directly from Base Plus Earthings. We deliver across India. Contact us at +91 9278276662 or email baseplusearthings.in@gmail.com for pricing and orders.`,
+  });
+
+  return faqs;
+}
+
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const product = getProductBySlug(slug);
@@ -20,18 +58,33 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: product.name,
-    description: product.shortDescription,
+    title: `${product.name} | Manufacturer & Supplier in India`,
+    description: `Buy ${product.name} from Base Plus Earthings. ${product.shortDescription} Available in multiple sizes. Pan India delivery. Contact for best price.`,
     keywords: [
       product.name,
       product.category,
       `${product.name} manufacturer`,
       `${product.name} supplier India`,
+      `${product.name} price`,
+      `buy ${product.name}`,
+      `${product.name} manufacturer in India`,
+      "earthing electrode",
+      "earthing solutions",
+      "Base Plus Earthings",
     ],
     openGraph: {
+      title: `${product.name} | Base Plus Earthings - Manufacturer in India`,
+      description: `Buy ${product.name} from Base Plus Earthings. ${product.shortDescription}`,
+      type: "website",
+      images: product.image ? [{ url: `https://baseplusearthings.in${product.image}`, width: 800, height: 800, alt: product.name }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
       title: `${product.name} | Base Plus Earthings`,
       description: product.shortDescription,
-      type: "website",
+    },
+    alternates: {
+      canonical: `https://baseplusearthings.in/products/${slug}`,
     },
   };
 }
@@ -56,6 +109,8 @@ export default async function ProductDetailPage({ params }) {
     relatedProducts.push(...otherProducts);
   }
 
+  const faqs = getProductFAQs(product);
+
   return (
     <>
       {/* JSON-LD Product Schema */}
@@ -68,10 +123,81 @@ export default async function ProductDetailPage({ params }) {
             name: product.name,
             description: product.shortDescription,
             category: product.category,
+            image: product.image ? `https://baseplusearthings.in${product.image}` : undefined,
+            brand: {
+              "@type": "Brand",
+              name: "Base Plus Earthings",
+            },
             manufacturer: {
               "@type": "Organization",
               name: "Base Plus Earthings",
+              url: "https://baseplusearthings.in",
             },
+            offers: {
+              "@type": "Offer",
+              url: `https://baseplusearthings.in/products/${product.slug}`,
+              availability: "https://schema.org/InStock",
+              priceCurrency: "INR",
+              seller: {
+                "@type": "Organization",
+                name: "Base Plus Earthings",
+              },
+            },
+            additionalProperty: Object.entries(product.specifications || {}).map(([key, value]) => ({
+              "@type": "PropertyValue",
+              name: key,
+              value: value,
+            })),
+          }),
+        }}
+      />
+
+      {/* JSON-LD BreadcrumbList Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://baseplusearthings.in",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Products",
+                item: "https://baseplusearthings.in/products",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: product.name,
+                item: `https://baseplusearthings.in/products/${product.slug}`,
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* JSON-LD FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+              },
+            })),
           }),
         }}
       />
@@ -106,7 +232,7 @@ export default async function ProductDetailPage({ params }) {
               {product.image ? (
                 <Image
                   src={product.image}
-                  alt={product.name}
+                  alt={`${product.name} - ${product.category} manufactured by Base Plus Earthings India`}
                   fill
                   className="object-cover object-top"
                   priority
@@ -233,6 +359,38 @@ export default async function ProductDetailPage({ params }) {
           </div>
         </section>
       )}
+
+      {/* FAQ Section */}
+      <section className="section-padding px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-navy-50/30" id="product-faqs">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-navy-800 mb-8 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <details
+                key={index}
+                className="group bg-white rounded-xl border border-navy-100 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <summary className="flex items-center justify-between cursor-pointer px-6 py-4 text-navy-800 font-semibold text-sm md:text-base">
+                  {faq.question}
+                  <svg
+                    className="w-5 h-5 text-navy-400 group-open:rotate-180 transition-transform duration-200 shrink-0 ml-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-4 text-navy-600 text-sm leading-relaxed border-t border-navy-50 pt-4">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

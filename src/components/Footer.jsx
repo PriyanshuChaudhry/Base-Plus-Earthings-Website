@@ -25,9 +25,9 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="relative w-10 h-10 rounded-lg overflow-hidden bg-white/10 p-1">
+              <div className="relative bg-white w-10 h-10 rounded-lg overflow-hidden">
                 <Image
-                  src="/logo.png"
+                  src="/logo.PNG"
                   alt="Base Plus Earthings"
                   fill
                   className="object-contain"

@@ -7,6 +7,6 @@ export default function robots() {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://basplusearthings.in/sitemap.xml",
+    sitemap: "https://baseplusearthings.in/sitemap.xml",
   };
 }

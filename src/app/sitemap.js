@@ -1,6 +1,6 @@
 import { products } from "@/data/products";
 
-const BASE_URL = "https://basplusearthings.in";
+const BASE_URL = "https://baseplusearthings.in";
 
 export default function sitemap() {
   const productPages = products.map((product) => ({

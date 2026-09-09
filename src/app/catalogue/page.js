@@ -1,9 +1,18 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Download Catalogue",
+  title: "Download Product Catalogue | Earthing & Lightning Protection",
   description:
-    "Download the complete Base Plus Earthings product catalogue PDF. Browse our full range of earthing electrodes, copper bonded rods, lightning protection, and earthing accessories.",
+    "Download the complete Base Plus Earthings product catalogue PDF. Browse our full range of earthing electrodes, copper bonded rods, lightning protection systems, and earthing accessories with specifications and pricing.",
+  keywords: [
+    "earthing product catalogue",
+    "earthing electrode catalogue PDF",
+    "Base Plus Earthings catalogue",
+    "earthing products brochure",
+  ],
+  alternates: {
+    canonical: "https://baseplusearthings.in/catalogue",
+  },
 };
 
 export default function CataloguePage() {

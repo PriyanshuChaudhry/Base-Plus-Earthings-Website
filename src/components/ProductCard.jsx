@@ -12,7 +12,7 @@ export default function ProductCard({ product }) {
         {product.image ? (
           <Image
             src={product.image}
-            alt={product.name}
+            alt={`${product.name} - ${product.category} by Base Plus Earthings`}
             fill
             className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
           />
