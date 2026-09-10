@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Script from "next/script";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -13,7 +14,7 @@ const inter = Inter({
 export const metadata = {
   metadataBase: new URL("https://baseplusearthings.in"),
   title: {
-    default: "Base Plus Earthings | Earthing Electrode and Lightning Arrester Manufacturer in India",
+    default: "Base Plus Earthings | Earthing Electrodes, Lightning Arresters & Accessories Manufacturer in India",
     template: "%s | Base Plus Earthings",
   },
   description:
@@ -37,13 +38,13 @@ export const metadata = {
     locale: "en_IN",
     url: "https://baseplusearthings.in",
     siteName: "Base Plus Earthings",
-    title: "Base Plus Earthings | Earthing Electrode Manufacturer in India",
+    title: "Base Plus Earthings | Earthing Electrodes, Lightning Arresters & Accessories Manufacturer in India",
     description:
       "Leading manufacturer of premium earthing electrodes, copper bonded rods, and lightning protection systems in India.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Base Plus Earthings | Earthing Electrode Manufacturer in India",
+    title: "Base Plus Earthings | Earthing Electrode, Lightning Arresters & Accessories Manufacturer in India",
     description:
       "Leading manufacturer of premium earthing electrodes, copper bonded rods, and lightning protection systems in India.",
   },
@@ -63,6 +64,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-1QRGMNCJYR"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-1QRGMNCJYR');
+          `}
+        </Script>
+      </head>
       <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
